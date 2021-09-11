@@ -14,7 +14,6 @@ blinker==1.4
 botocore==1.21.21
 certifi==2020.6.20
 chardet==4.0.0
-chrome-gnome-shell==0.0.0
 Click==7.0
 colorama==0.4.3
 command-not-found==0.3
