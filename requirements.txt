@@ -78,7 +78,6 @@ numpy==1.19.4
 numpydoc==1.1.0
 oauthlib==3.1.0
 olefile==0.46
-openshot-qt==2.5.1
 optional-django==0.1.0
 packaging==21.0
 paramiko==2.7.2
