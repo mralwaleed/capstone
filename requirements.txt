@@ -154,7 +154,5 @@ Werkzeug==0.15.6
 wrapt==1.11.1
 WTForms==2.3.3
 xdg==5
-xkit==0.0.0
 xonsh==0.9.25
-youtube-dl==2021.4.7
 zipp==1.0.0
