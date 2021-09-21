@@ -5,6 +5,19 @@ from flask_cors import CORS
 from auth.auth import requires_auth, AuthError
 
 
+AUTH0_DOMAIN = os.environ.get("AUTH0_DOMAIN")
+ALGORITHMS = os.environ.get('ALGORITHMS')
+API_AUDIENCE = os.environ.get('API_AUDIENCE')
+
+print(AUTH0_DOMAIN)
+'''
+AUTH0_DOMAIN = os.environ["AUTH0_DOMAIN"]
+ALGORITHMS = os.environ['ALGORITHMS']
+API_AUDIENCE = os.environ['API_AUDIENCE']
+
+print(AUTH0_DOMAIN)
+'''
+
 def create_app(test_config=None):
 
     app = Flask(__name__)
@@ -23,9 +36,10 @@ def create_app(test_config=None):
 
     @app.route('/')
     def get_greeting():
-        excited = os.environ['EXCITED']
+        excited = os.environ.get('EXCITED')
+        print(excited)
         greeting = "Hello"
-        if excited == 'true':
+        if excited == "true":
             greeting = greeting + "!!!!!"
         return greeting
 
@@ -39,7 +53,8 @@ def create_app(test_config=None):
 
         all_actors = Actors.query.order_by(Actors.id).all()
 
-        actors = list(map(Actors.format, Actors.query.all()))
+        actors = [actor.format() for actor in all_actors]
+  
 
         if len(all_actors) == 0:
             abort(404)
@@ -52,11 +67,12 @@ def create_app(test_config=None):
     @app.route('/movies', methods=['GET'])
     @requires_auth('GET:movies')
     def retrieve_movies(payload):
+        print("yesy")
 
         all_movie = Movies.query.order_by(Movies.id).all()
 
-        movies = list(map(Movies.format, Movies.query.all()))
-
+        movies =[movie.format() for movie in all_movie]
+        
         if len(all_movie) == 0:
             abort(404)
 

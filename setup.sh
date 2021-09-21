@@ -1,5 +1,5 @@
 export FLASK_APP=app.py
-export DATABASE_URL='postgres://bwzoeiwpvzwgct:022d2874c3dea5f4a70d683308c00242c95568e1bfde5f9942342b0d32f363ef@ec2-44-196-8-220.compute-1.amazonaws.com:5432/dfqafbqm2cva38'
+export DATABASE_URL='postgres://kyfxaodnmlfiwn:6e91be3795c011a91aaa7125503e0802943e4ca319a48334cf85a4f212e96b9f@ec2-54-174-172-218.compute-1.amazonaws.com:5432/d4kv795bk7si6o'
 export AUTH0_DOMAIN='dev-5vkquwx6.us.auth0.com'
 export ALGORITHMS=['RS256']
 export API_AUDIENCE='capstone'
