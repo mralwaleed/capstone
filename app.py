@@ -39,8 +39,7 @@ def create_app(test_config=None):
 
         all_actors = Actors.query.order_by(Actors.id).all()
 
-        actors = {
-            actor.id: actor.name for actor in all_actors}
+        actors = list(map(Actors.format, Actors.query.all()))
 
         if len(all_actors) == 0:
             abort(404)
@@ -56,8 +55,7 @@ def create_app(test_config=None):
 
         all_movie = Movies.query.order_by(Movies.id).all()
 
-        movies = {
-            movie.id: movie.title for movie in all_movie}
+        movies = list(map(Movies.format, Movies.query.all()))
 
         if len(all_movie) == 0:
             abort(404)
