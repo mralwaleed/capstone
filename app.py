@@ -9,14 +9,6 @@ AUTH0_DOMAIN = os.environ.get("AUTH0_DOMAIN")
 ALGORITHMS = os.environ.get('ALGORITHMS')
 API_AUDIENCE = os.environ.get('API_AUDIENCE')
 
-print(AUTH0_DOMAIN)
-'''
-AUTH0_DOMAIN = os.environ["AUTH0_DOMAIN"]
-ALGORITHMS = os.environ['ALGORITHMS']
-API_AUDIENCE = os.environ['API_AUDIENCE']
-
-print(AUTH0_DOMAIN)
-'''
 
 def create_app(test_config=None):
 
