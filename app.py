@@ -5,11 +5,6 @@ from flask_cors import CORS
 from auth.auth import requires_auth, AuthError
 
 
-AUTH0_DOMAIN = os.environ.get("AUTH0_DOMAIN")
-ALGORITHMS = os.environ.get('ALGORITHMS')
-API_AUDIENCE = os.environ.get('API_AUDIENCE')
-
-
 def create_app(test_config=None):
 
     app = Flask(__name__)
